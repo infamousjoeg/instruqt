@@ -1,0 +1,29 @@
+slug: secure-ansible-automation
+type: track
+title: Secure Ansible Automation
+teaser: In this fully interactive hosted tutorial you will learn how to secure Ansible automation by keeping unsecured secrets out of Playbooks with Conjur open source secrets management.
+description: |-
+Ansible is an agentless configuration management tool for provisioning, configuring, and deploying applications. Ansible is great for configuration management, but it’s not designed to manage secrets across multiple tools and cloud environments.
+
+With this fully interactive hosted tutorial you will learn how to secure Ansible automation by keeping unsecured secrets out of Playbooks with Conjur open source secrets management.
+
+# How it works?
+|--|--|
+|![](assets/diagrams/secure-ansible-automation.svg | width=600)|
+1. Install Ansible Conjur Role and Lookup Plug-in
+1. Load a Conjur policy that grants the Ansible control machine privileges on secrets
+1. Run a playbook containing references to secrets stored in Conjur
+1. Authenticate the control machine to Conjur
+1. Issue the secrets
+1. Playbook fetches secrets from Conjur and executes|
+
+All you need is a web browser and a few minutes to get started; no need to install anything!
+
+Let's get started!
+icon: assets/logos/CyberArkCommons_Vert_4C@256x.png
+tags: ["cyberark", "conjur", "secrets-management", "red-hat", "ansible", "ansible-community", "open-source"]
+owner: cyberark
+developers:
+- joe.garcia@cyberark.com
+private: false
+published: false
