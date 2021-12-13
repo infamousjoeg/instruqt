@@ -1,0 +1,7 @@
+#!/bin/bash
+
+apt-get update
+
+# Add service02 account
+useradd -m -d /tmp service02
+echo 'service02:5;LF+J4Rfqds:DZ8' | chpasswd

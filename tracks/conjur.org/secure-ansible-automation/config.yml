@@ -1,10 +1,11 @@
 version: "3"
 containers:
-- name: controller
+- name: host02
   image: ubuntu
   shell: /bin/bash
   memory: 256
-- name: node
-  image: ubuntu
+virtualmachines:
+- name: host01
+  image: instruqt/docker-2010
   shell: /bin/bash
-  memory: 256
+  machine_type: n1-standard-1

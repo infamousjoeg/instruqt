@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Ansible
+echo "=== [START] apt update and installs ==="
+apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get install ansible sshpass git curl -y
+echo "=== [FINISH] apt update and installs ==="
+
+echo "=== [START] Export env vars to /root/.bashrc ==="
+echo "export ANSIBLE_HOST_KEY_CHECKING=False" >> /root/.profile
+echo "=== [FINISH] Export env vars to /root/.bashrc ==="
+
+# FOR DEBUGGING PURPOSES ONLY
+exit 0
+
+# Setup environment
+echo "=== [START] Setup environment ==="
+git clone https://github.com/quincycheng/katacoda-env-conjur-ansible-ssh.git 
+mv katacoda-env-conjur-ansible-ssh/* /root
+rm -rf katacoda-env-conjur-ansible-ssh
+echo "=== [FINISH] Setup environment ==="
+
+# Conjur
+echo "=== [START] Conjur initial setup ==="
+curl -o docker-compose.yml https://quincycheng.github.io/docker-compose.quickstart.yml
+docker-compose pull
+docker-compose run --no-deps --rm conjur data-key generate > data_key
+docker pull postgres:9.6
+echo "=== [FINISH] Conjur initial setup ==="
+
+# Add service01 account
+echo "=== [START] Add service01 account ==="
+useradd -m -d /tmp service01
+echo 'service01:W/4m=cS6QSZSc*nd' | chpasswd
+echo "=== [FINISH] Add service01 account ==="
