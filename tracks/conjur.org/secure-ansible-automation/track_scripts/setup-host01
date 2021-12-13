@@ -1,17 +1,20 @@
 #!/bin/bash
 
+# Wait for bootstrap to complete
+until [ -f /opt/instruqt/bootstrap/host-bootstrap-completed ]; do
+    echo "Waiting for instruqt bootstrap to complete"
+    sleep 1
+done
+
 # Ansible
 echo "=== [START] apt update and installs ==="
 apt-get update
-DEBIAN_FRONTEND=noninteractive apt-get install ansible sshpass git curl -y
+DEBIAN_FRONTEND=noninteractive apt-get install sshpass ansible git curl -y
 echo "=== [FINISH] apt update and installs ==="
 
 echo "=== [START] Export env vars to /root/.bashrc ==="
-echo "export ANSIBLE_HOST_KEY_CHECKING=False" >> /root/.profile
+echo "export ANSIBLE_HOST_KEY_CHECKING=False" >> /root/.bashrc
 echo "=== [FINISH] Export env vars to /root/.bashrc ==="
-
-# FOR DEBUGGING PURPOSES ONLY
-exit 0
 
 # Setup environment
 echo "=== [START] Setup environment ==="
@@ -30,6 +33,14 @@ echo "=== [FINISH] Conjur initial setup ==="
 
 # Add service01 account
 echo "=== [START] Add service01 account ==="
-useradd -m -d /tmp service01
+useradd -m -d /home/service01 service01
 echo 'service01:W/4m=cS6QSZSc*nd' | chpasswd
+sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
+mkdir -p /home/service01/.ssh
+ssh-keygen -t rsa -b 4096 -N "" -f /home/service01/.ssh/id_rsa
+touch /home/service01/.ssh/authorized_keys
+cat /home/service01/.ssh/id_rsa.pub >> /home/service01/.ssh/authorized_keys
+chmod 600 /home/service01/.ssh/authorized_keys
+chown -R service01:service01 /home/service01/.ssh
+service ssh restart
 echo "=== [FINISH] Add service01 account ==="

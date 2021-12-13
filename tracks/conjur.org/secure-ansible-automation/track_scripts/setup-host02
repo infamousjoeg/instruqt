@@ -1,7 +1,26 @@
 #!/bin/bash
 
+# Wait for bootstrap to complete
+until [ -f /opt/instruqt/bootstrap/host-bootstrap-completed ]; do
+    echo "Waiting for instruqt bootstrap to complete"
+    sleep 1
+done
+
+echo "=== [START] apt update and installs ==="
 apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get -y sshpass
+echo "=== [FINISH] apt update and installs ==="
 
 # Add service02 account
-useradd -m -d /tmp service02
+echo "=== [START] Add service02 account ==="
+useradd -m -d /home/service02 service02
 echo 'service02:5;LF+J4Rfqds:DZ8' | chpasswd
+sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
+mkdir -p /home/service02/.ssh
+ssh-keygen -t rsa -b 4096 -N "" -f /home/service02/.ssh/id_rsa
+touch /home/service02/.ssh/authorized_keys
+cat /home/service02/.ssh/id_rsa.pub >> /home/service02/.ssh/authorized_keys
+chmod 600 /home/service02/.ssh/authorized_keys
+chown -R service02:service02 /home/service02/.ssh
+service ssh restart
+echo "=== [FINISH] Add service02 account ==="
