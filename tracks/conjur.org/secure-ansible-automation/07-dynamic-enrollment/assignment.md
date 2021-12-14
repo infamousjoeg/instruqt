@@ -38,14 +38,13 @@ docker cp conjur_client_1:/root/conjur-demo.pem /root/
 3. Create a host factory token:
 
 ```
-cd conjur
-docker-compose exec client conjur hostfactory token create ansible | tee hftoken
+docker-compose exec client conjur hostfactory token create ansible | tee conjur/hftoken
 ```
 
 4. Save the token as environment variable:
 
 ```
-export HFTOKEN="$(grep token hftoken | cut -d: -f2 | tr -d ' \r\n' | tr -d ','  | tr -d '\"' )"
+export HFTOKEN="$(grep token conjur/hftoken | cut -d: -f2 | tr -d ' \r\n' | tr -d ','  | tr -d '\"' )"
 ```
 
 5. Prepare an inventory file. Paste the following into the "Code Editor" tab in a new file named `inventory`:
@@ -72,5 +71,5 @@ host01
 7. Grant it!
 
 ```
-ansible-playbook -i inventory grant_conjur_id.yml
+ansible-playbook -i conjur/inventory conjur/grant_conjur_id.yml
 ```

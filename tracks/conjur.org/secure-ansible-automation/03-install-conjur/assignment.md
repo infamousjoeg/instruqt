@@ -32,5 +32,5 @@ To access the web interface, click on the "Conjur UI" tab. You should see a webp
 
 To create an account in Conjur, execute the following in the "Terminal" tab:
 ```
-docker-compose exec conjur conjurctl account create demo | tee admin.out
+docker-compose exec conjur conjurctl account create demo | tee conjur/admin.out
 ```

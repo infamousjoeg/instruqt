@@ -83,5 +83,5 @@ Next, let's create an insecure-playbook.yml Ansible playbook file and add what c
 Once you're ready, run the `ansible-playbook` command below on the "Terminal" tab to run the playbook file against the remote hosts declared in the inventory file:
 
 ```
-ansible-playbook -i inventory insecure-playbook.yml
+ansible-playbook -i insecure-playbook/inventory insecure-playbook/insecure-playbook.yml
 ```

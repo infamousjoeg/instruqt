@@ -61,5 +61,5 @@ We also need to create the secure playbook that we'll be executing on the hosts 
 Finally, let's execute the Ansible playbook against the hosts defined in the `inventory` file:
 
 ```
-ansible-playbook -i inventory playbook.yml
+ansible-playbook -i secure-playbook/inventory secure-playbook/playbook.yml
 ```

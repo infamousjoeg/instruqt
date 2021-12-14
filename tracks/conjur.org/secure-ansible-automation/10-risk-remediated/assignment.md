@@ -18,6 +18,8 @@ Let's review the new `inventory` file again.
 
 Execute:
 
-`cat inventory`
+```
+cat secure-playbook/inventory
+```
 
 Can you find any embedded secrets?
