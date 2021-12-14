@@ -1,12 +1,14 @@
 ---
 slug: the-secrets
+id: g1hcjnuzsjs1
 type: challenge
 title: The Secrets
 teaser: Initialize the secret variables previously loaded via Conjur Policy with values.
 notes:
 - type: text
-  contents: |-
-    In this challenge, we'll be initializing the secret variables creating in a previous challenge via Conjur Policy with values using the Docker-based Conjur CLI.
+  contents: In this challenge, we'll be initializing the secret variables creating
+    in a previous challenge via Conjur Policy with values using the Docker-based Conjur
+    CLI.
 tabs:
 - title: Terminal
   type: terminal

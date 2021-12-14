@@ -12,7 +12,7 @@ tabs:
   type: terminal
   hostname: host01
 difficulty: basic
-timelimit: 3600
+timelimit: 300
 ---
 Did you notice the risk in the last challenge?
 

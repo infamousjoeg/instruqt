@@ -1,12 +1,15 @@
 ---
 slug: dynamic-enrollment
+id: 0mwz85vomhdy
 type: challenge
 title: Dynamic Enrollment
-teaser: Dynamically enroll the Ansible host as a trusted Host Identity of the Conjur service.
+teaser: Dynamically enroll the Ansible host as a trusted Host Identity of the Conjur
+  service.
 notes:
 - type: text
-  contents: |-
-    In this challenge, we'll be installing the Conjur Host Identity role from Ansible Galaxy and granting our Ansible host dynamically to authenticate to the Conjur service.
+  contents: In this challenge, we'll be installing the Conjur Host Identity role from
+    Ansible Galaxy and granting our Ansible host dynamically to authenticate to the
+    Conjur service.
 tabs:
 - title: Terminal
   type: terminal
@@ -46,7 +49,7 @@ export HFTOKEN="$(grep token hftoken | cut -d: -f2 | tr -d ' \r\n' | tr -d ','  
 ```
 
 5. Prepare an inventory file. Paste the following into the "Code Editor" tab in a new file named `inventory`:
- 
+
 ```
 [servers]
 host01

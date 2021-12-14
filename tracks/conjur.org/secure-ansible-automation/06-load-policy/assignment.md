@@ -1,12 +1,13 @@
 ---
 slug: load-policy
+id: wr4xkaba0lzv
 type: challenge
 title: Load Policy
 teaser: Load Conjur Policy files into the Conjur service.
 notes:
 - type: text
-  contents: |-
-    In this challenge, we'll be using the Docker-based Conjur CLI to load the policies created in the previous challenge into the Conjur service.
+  contents: In this challenge, we'll be using the Docker-based Conjur CLI to load
+    the policies created in the previous challenge into the Conjur service.
 tabs:
 - title: Terminal
   type: terminal
@@ -19,7 +20,6 @@ Now, let's copy the policy files to Docker-based Conjur CLI container and load t
 **Load Root Policy**
 
 ```
-cd conjur
 docker cp conjur.yml conjur_client_1:/tmp/
 docker-compose exec client conjur policy load --replace root /tmp/conjur.yml
 ```

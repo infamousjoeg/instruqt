@@ -34,7 +34,7 @@ Let's login to Conjur.
 First, let's save the admin API key to a variable to use. In the last challenge, it was saved to a file named `admin.out`:
 
 ```
-api_key="$(grep API conjur/admin.out | cut -d: -f2 | tr -d ' \r\n')"
+api_key="$(grep API admin.out | cut -d: -f2 | tr -d ' \r\n')"
 ```
 
 Next, we need to give the Conjur CLI the command to authenticate as "admin":

@@ -1,12 +1,16 @@
 ---
 slug: secure-playbook
+id: lzu3qyuydsy3
 type: challenge
 title: Secure Playbook
-teaser: Secure the Ansible playbook initially used to securely fetch secrets just-in-time from Conjur Secrets Manager.
+teaser: Secure the Ansible playbook initially used to securely fetch secrets just-in-time
+  from Conjur Secrets Manager.
 notes:
 - type: text
-  contents: |-
-    In this challenge, we'll be creating a more secure Ansible playbook and using an inventory file that contains NO SECRETS. The secrets for connecting to remote nodes will be fetched from the Conjur service just-in-time and used by Ansible.
+  contents: In this challenge, we'll be creating a more secure Ansible playbook and
+    using an inventory file that contains NO SECRETS. The secrets for connecting to
+    remote nodes will be fetched from the Conjur service just-in-time and used by
+    Ansible.
 tabs:
 - title: Terminal
   type: terminal

@@ -48,7 +48,7 @@ tabs:
   hostname: host01
   path: /root/insecure-playbook
 difficulty: basic
-timelimit: 3600
+timelimit: 300
 ---
 Let's take a look at a basic inventory and then test using a simple playbook file.
 

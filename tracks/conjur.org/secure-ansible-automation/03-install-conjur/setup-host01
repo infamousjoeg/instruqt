@@ -1,9 +1,4 @@
 #!/bin/bash
 
-git clone https://github.com/quincycheng/katacoda-env-conjur-ansible-ssh.git 
-mv katacoda-env-conjur-ansible-ssh/* .
-rm -rf katacoda-env-conjur-ansible-ssh
-chmod +x conjur/setupConjur.sh
-pushd conjur || exit 1
-    ./setupConjur.sh
-popd || exit 1
+docker-compose up -d
+mkdir -p /root/conjur && cd "$_" || exit 1

@@ -1,11 +1,13 @@
 ---
 slug: conjur-policy
+id: z78qdxclt3ba
 type: challenge
 title: Conjur Policy
 teaser: Create Conjur Policy for Ansible to access secrets using a Host Identity.
 notes:
 - type: text
-  contents: In this challenge, you will be creating Conjur Policy files that define the resources and authorizations allowed within the Secrets Manager.
+  contents: In this challenge, you will be creating Conjur Policy files that define
+    the resources and authorizations allowed within the Secrets Manager.
 tabs:
 - title: Terminal
   type: terminal
