@@ -34,8 +34,10 @@ sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_
 mkdir -p /home/service01/.ssh
 ssh-keygen -t rsa -b 4096 -N "" -f /home/service01/.ssh/id_rsa
 touch /home/service01/.ssh/authorized_keys
+touch /home/service01/.ssh/known_hosts
 cat /home/service01/.ssh/id_rsa.pub >> /home/service01/.ssh/authorized_keys
 chmod 600 /home/service01/.ssh/authorized_keys
 chown -R service01:service01 /home/service01/.ssh
+ssh-keyscan -H host02 >> /home/service01/.ssh/known_hosts
 service ssh restart
 echo "=== [FINISH] Add service01 account ==="
