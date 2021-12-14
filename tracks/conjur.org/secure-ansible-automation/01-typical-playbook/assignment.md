@@ -50,18 +50,38 @@ tabs:
 difficulty: basic
 timelimit: 300
 ---
-Let's take a look at a basic inventory and then test using a simple playbook file.
+Before we can do anything, we must create an inventory defining hosts Ansible will connect to and a playbook Ansible will execute against those hosts.
 
 **Inventory File**
 
-First, check out the inventory file on the "Code Editor" tab. This is a common example of how inventory files hold connection information and secrets for Ansible to make connections to remote hosts.
+First, let's create an inventory file on the "Code Editor" tab. This is a common example of how inventory files hold connection information and secrets for Ansible to make connections to remote hosts. Paste the following to the "Code Editor" tab in a new file called `inventory`:
+
+```
+[demo_servers]
+host01 ansible_connection=ssh ansible_ssh_user=service01 ansible_ssh_pass=W/4m=cS6QSZSc*nd
+host02 ansible_connection=ssh ansible_ssh_user=service02 ansible_ssh_pass=5;LF+J4Rfqds:DZ8
+```
 
 **Playbook**
 
-Next, review the insecure-playbook.yml Ansible playbook file to see what commands we'll be running in it.
+Next, let's create an insecure-playbook.yml Ansible playbook file and add what commands we'll be running in it. Paste the following to the "Code Editor" tab in a new file called `insecure-playbook.yml`:
+
+```
+- hosts: demo_servers
+  tasks:
+    - name: Get user name
+      shell: whoami
+      register: theuser
+
+    - name: Get host name
+      shell: hostname
+      register: thehost
+
+    - debug: msg="I am {{ theuser.stdout }} at {{ thehost.stdout }}"
+```
 
 Once you're ready, run the `ansible-playbook` command below on the "Terminal" tab to run the playbook file against the remote hosts declared in the inventory file:
 
 ```
-ansible-playbook -i insecure-playbook/inventory insecure-playbook/insecure-playbook.yml
+ansible-playbook -i inventory insecure-playbook.yml
 ```
