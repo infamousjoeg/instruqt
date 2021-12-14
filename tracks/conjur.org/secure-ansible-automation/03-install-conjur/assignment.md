@@ -24,7 +24,7 @@ tabs:
   path: /
   port: 8080
 difficulty: basic
-timelimit: 3600
+timelimit: 300
 ---
 We initiated Conjur Secrets Manager for you in the background. Now, let's verify that it is complete by checking the web interface.
 

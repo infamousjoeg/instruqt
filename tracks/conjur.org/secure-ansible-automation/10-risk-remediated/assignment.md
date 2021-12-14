@@ -12,7 +12,7 @@ tabs:
   type: terminal
   hostname: host01
 difficulty: basic
-timelimit: 3600
+timelimit: 300
 ---
 Let's review the new `inventory` file again.
 

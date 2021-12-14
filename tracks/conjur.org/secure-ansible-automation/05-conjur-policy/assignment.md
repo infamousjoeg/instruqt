@@ -17,7 +17,7 @@ tabs:
   hostname: host01
   path: /root/conjur
 difficulty: basic
-timelimit: 3600
+timelimit: 300
 ---
 We need to create an identity, called a Host Identity, for Ansible to use to authenticate to the Conjur service. We also need to create authorization definitions on what Ansible has access to. In Conjur, we do this through policy-as-code.
 

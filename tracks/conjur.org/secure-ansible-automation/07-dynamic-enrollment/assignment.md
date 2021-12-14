@@ -19,7 +19,7 @@ tabs:
   hostname: host01
   path: /root/conjur
 difficulty: basic
-timelimit: 3600
+timelimit: 300
 ---
 We will now grant a Host Identity to the Ansible server dynamically.
 

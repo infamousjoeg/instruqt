@@ -20,7 +20,7 @@ tabs:
   hostname: host01
   path: /root/secure-playbook
 difficulty: basic
-timelimit: 3600
+timelimit: 300
 ---
 Let's convert the Conjur Host Identity to make it compatible with Ansible. We want to "urlify" it by changing any `/` in the host identity to `%2F`:
 

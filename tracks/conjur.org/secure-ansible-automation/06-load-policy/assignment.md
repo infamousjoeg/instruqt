@@ -13,7 +13,7 @@ tabs:
   type: terminal
   hostname: host01
 difficulty: basic
-timelimit: 3600
+timelimit: 300
 ---
 Now, let's copy the policy files to Docker-based Conjur CLI container and load them.
 
