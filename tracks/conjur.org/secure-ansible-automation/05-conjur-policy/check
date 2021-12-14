@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# check
+echo "Checking the solution of the challenge"
+if [ ! -f /root/conjur/conjur.yml ]; then
+  fail-message "Your challenge failed because you did not create a conjur.yml policy file"
+fi
+
+if [ ! -f /root/conjur/server.yml ]; then
+  fail-message "Your challenge failed because you did not create a server.yml policy file"
+fi
+
+if [ ! -f /root/conjur/ansible.yml ]; then
+  fail-message "Your challenge failed because you did not create a ansible.yml policy file"
+fi

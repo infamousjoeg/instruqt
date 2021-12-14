@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd conjur || exit 1
+docker-compose exec conjur conjurctl account create demo | tee admin.out

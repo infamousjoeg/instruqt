@@ -1,0 +1,28 @@
+#!/bin/bash
+
+ansible-galaxy install cyberark.conjur-host-identity
+docker cp conjur_client_1:/root/conjur-demo.pem /root/
+
+docker-compose exec client conjur hostfactory token create ansible | tee conjur/hftoken
+
+hf_token="$(grep token hftoken | cut -d: -f2 | tr -d ' \r\n' | tr -d ','  | tr -d '\"' )"
+export HFTOKEN=$hf_token
+
+cat >> /root/conjur/inventory <<EOF
+[servers]
+host01
+EOF
+
+cat >> /root/conjur/grant_conjur_id.yml <<EOF
+- hosts: servers
+  roles:
+    - role: cyberark.conjur-host-identity
+      conjur_appliance_url: "http://host01:8080"
+      conjur_account: "demo"
+      conjur_host_factory_token: "{{lookup('env', 'HFTOKEN')}}"
+      conjur_host_name: "{{inventory_hostname}}"
+      conjur_ssl_certificate:  "{{lookup('file', '/root/conjur-demo.pem')}}"
+      conjur_validate_certs: "false"
+EOF
+
+ansible-playbook -i inventory grant_conjur_id.yml

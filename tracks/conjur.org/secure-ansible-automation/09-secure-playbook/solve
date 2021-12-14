@@ -1,0 +1,31 @@
+#!/bin/bash
+
+sed -i "s=login host/=login host%2F=" /etc/conjur.identity
+
+cat >> /root/secure-playbook/inventory <<EOF
+[demo_servers]
+host1
+host2
+EOF
+
+cat >> /root/secure-playbook/playbook.yml <<EOF
+- hosts: demo_servers
+  vars:
+      ansible_connection: ssh
+      ansible_host: "{{ lookup('conjur_variable', 'server/' + inventory_hostname+ '/host') }}"
+      ansible_user: "{{ lookup('conjur_variable', 'server/' + inventory_hostname+ '/user') }}"
+      ansible_ssh_pass: "{{ lookup('conjur_variable', 'server/' + inventory_hostname+ '/pass') }}"
+
+  tasks:
+    - name: Get user name
+      shell: whoami
+      register: theuser
+
+    - name: Get host name
+      shell: hostname
+      register: thehost
+
+    - debug: msg="I am {{ theuser.stdout }} at {{ thehost.stdout }}"
+EOF
+
+ansible-playbook -i inventory playbook.yml

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+docker-compose exec client conjur variable values add server/host1/host "host01"
+docker-compose exec client conjur variable values add server/host1/user "service01"
+docker-compose exec client conjur variable values add server/host1/pass "W/4m=cS6QSZSc*nd"
+docker-compose exec client conjur variable values add server/host2/host "host02"
+docker-compose exec client conjur variable values add server/host2/user "service02"
+docker-compose exec client conjur variable values add server/host2/pass "5;LF+J4Rfqds:DZ8"

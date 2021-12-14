@@ -10,7 +10,8 @@ description: |-
 
   With this fully interactive hosted tutorial you will learn how to secure Ansible automation by keeping unsecured secrets out of Playbooks with Conjur open source secrets management.
 
-  # How it works?
+  **How it works?**
+  
   1. Install Ansible Conjur Role and Lookup Plug-in
   1. Load a Conjur policy that grants the Ansible control machine privileges on secrets
   1. Run a playbook containing references to secrets stored in Conjur
@@ -34,6 +35,6 @@ tags:
 owner: cyberark
 developers:
 - joe@joe-garcia.com
-private: true
+private: false
 published: false
-checksum: "9461645024920743725"
+checksum: "7338009177295121053"
