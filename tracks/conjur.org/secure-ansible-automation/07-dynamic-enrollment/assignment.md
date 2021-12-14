@@ -29,32 +29,26 @@ We will now grant a Host Identity to the Ansible server dynamically.
 ansible-galaxy install cyberark.conjur-host-identity
 ```
 
-2.  Get the SSL Certificate from the Docker-based Conjur CLI:
-
-```
-docker cp conjur_client_1:/root/conjur-demo.pem /root/
-```
-
-3. Create a host factory token:
+2. Create a host factory token:
 
 ```
 docker-compose exec client conjur hostfactory token create ansible | tee conjur/hftoken
 ```
 
-4. Save the token as environment variable:
+3. Save the token as environment variable:
 
 ```
 export HFTOKEN="$(grep token conjur/hftoken | cut -d: -f2 | tr -d ' \r\n' | tr -d ','  | tr -d '\"' )"
 ```
 
-5. Prepare an inventory file. Paste the following into the "Code Editor" tab in a new file named `inventory`:
+4. Prepare an inventory file. Paste the following into the "Code Editor" tab in a new file named `inventory`:
 
 ```
 [servers]
 host01
 ```
 
-6. Prepare a playbook to grant the Ansible host (host01) with a Conjur Host Identity. Paste the following into the "Code Editor" tab in a new file named `grant_conjur_id.yml`:
+5. Prepare a playbook to grant the Ansible host (host01) with a Conjur Host Identity. Paste the following into the "Code Editor" tab in a new file named `grant_conjur_id.yml`:
 
 ```
 - hosts: servers
@@ -64,11 +58,10 @@ host01
       conjur_account: "demo"
       conjur_host_factory_token: "{{lookup('env', 'HFTOKEN')}}"
       conjur_host_name: "{{inventory_hostname}}"
-      conjur_ssl_certificate:  "{{lookup('file', '/root/conjur-demo.pem')}}"
       conjur_validate_certs: "false"
 ```
 
-7. Grant it!
+6. Grant it!
 
 ```
 ansible-playbook -i conjur/inventory conjur/grant_conjur_id.yml
