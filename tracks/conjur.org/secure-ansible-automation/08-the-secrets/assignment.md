@@ -27,7 +27,8 @@ docker-compose exec client conjur variable values add server/host1/host "host01"
 ```
 Host 1 username:
 
-```docker-compose exec client conjur variable values add server/host1/user "service01"
+```
+docker-compose exec client conjur variable values add server/host1/user "service01"
 ```
 Host 1 password:
 
