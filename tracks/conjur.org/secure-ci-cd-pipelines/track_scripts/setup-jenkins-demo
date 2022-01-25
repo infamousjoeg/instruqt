@@ -21,4 +21,6 @@ docker-compose run --no-deps --rm conjur data-key generate > data_key
 generated_data_key="$(<data_key)"
 echo "export CONJUR_DATA_KEY=${generated_data_key}" >> /root/.bashrc
 docker pull postgres:9.6
+docker-compose up -d
+echo "$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' root_conjur_1) conjur" >> /etc/hosts
 echo "=== [FINISH] Conjur initial setup ==="

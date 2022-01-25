@@ -1,12 +1,12 @@
 ---
 slug: jenkins-login
+id: 6kgaxsiffkyd
 type: challenge
 title: Login to Jenkins
 teaser: Short teaser goes here.
 notes:
 - type: text
-  contents: |-
-    Long description goes here. (prerequisites.md from Katacoda)
+  contents: Long description goes here. (prerequisites.md from Katacoda)
 tabs:
 - title: Terminal
   type: terminal
