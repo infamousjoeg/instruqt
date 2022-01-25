@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Wait for bootstrap to complete
+until [ -f /opt/instruqt/bootstrap/host-bootstrap-completed ]; do
+    echo "Waiting for instruqt bootstrap to complete"
+    sleep 1
+done
+
+# Update apt & Install git
+echo "=== [START] apt update and installs ==="
+apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get install git -y
+echo "=== [FINISH] apt update and installs ==="
+
+# Conjur, Jenkins, and HTTP Web Server
+echo "=== [START] Conjur initial setup ==="
+git clone https://github.com/quincycheng/katacoda-env-conjur-jenkins
+cd katacoda-env-conjur-jenkins || exit
+docker-compose pull
+docker-compose run --no-deps --rm conjur data-key generate > data_key
+generated_data_key="$(<data_key)"
+echo "export CONJUR_DATA_KEY=${generated_data_key}" >> /root/.bashrc
+docker pull postgres:9.6
+echo "=== [FINISH] Conjur initial setup ==="
