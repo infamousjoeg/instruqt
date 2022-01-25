@@ -1,0 +1,15 @@
+slug: conjur-rbac-policy-101
+type: track
+title: Conjur RBAC Policy 101
+teaser: A short description of the track.
+description: |-
+  A long description of the track.
+
+  You can use any GitHub flavoured markdown.
+icon: https://storage.googleapis.com/instruqt-frontend/img/tracks/default.png
+tags: []
+owner: cyberark
+developers:
+- joe@joe-garcia.com
+private: false
+published: false

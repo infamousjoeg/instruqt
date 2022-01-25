@@ -1,0 +1,13 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2020-09-23 09:51:19.746 UTC</timestamp>
+  <md5sum>4ceabb3dc79997eb68c48e1bb5a32b25</md5sum>
+  <fileName>Credential id=theServerAccount name=theServerAccount/******</fileName>
+  <usages>
+    <entry>
+      <string>Demo/Typical Pipeline Project</string>
+      <ranges>2</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>

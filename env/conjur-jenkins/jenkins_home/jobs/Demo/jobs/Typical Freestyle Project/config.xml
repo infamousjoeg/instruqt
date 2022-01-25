@@ -1,0 +1,40 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <jenkins.plugins.http__request.HttpRequest plugin="http_request@1.8.26">
+      <url>http://http-auth-server</url>
+      <ignoreSslErrors>true</ignoreSslErrors>
+      <httpMode>GET</httpMode>
+      <httpProxy></httpProxy>
+      <passBuildParameters>false</passBuildParameters>
+      <validResponseCodes>100:399</validResponseCodes>
+      <validResponseContent></validResponseContent>
+      <acceptType>NOT_SET</acceptType>
+      <contentType>NOT_SET</contentType>
+      <outputFile></outputFile>
+      <timeout>0</timeout>
+      <consoleLogResponseBody>false</consoleLogResponseBody>
+      <quiet>false</quiet>
+      <authentication>theServerAccount</authentication>
+      <requestBody></requestBody>
+      <uploadFile></uploadFile>
+      <multipartName></multipartName>
+      <wrapAsMultipart>false</wrapAsMultipart>
+      <useSystemProperties>false</useSystemProperties>
+      <customHeaders class="empty-list"/>
+    </jenkins.plugins.http__request.HttpRequest>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>

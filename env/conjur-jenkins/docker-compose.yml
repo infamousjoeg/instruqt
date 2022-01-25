@@ -1,0 +1,50 @@
+version: '3'
+services:
+  database:
+    image: postgres:9.3
+    container_name: database
+
+  conjur:
+    image: cyberark/conjur
+    command: server
+    environment:
+      DATABASE_URL: postgres://postgres@database/postgres
+      CONJUR_DATA_KEY:
+    container_name: conjur
+    depends_on: [ database ]
+    ports:
+      - "8080:80"
+
+  client:
+    image: conjurinc/cli5
+    depends_on: [ conjur ]
+    entrypoint: sleep
+    command: infinity
+    environment:
+      CONJUR_APPLIANCE_URL: http://conjur
+      CONJUR_ACCOUNT:
+      CONJUR_AUTHN_API_KEY:
+      CONJUR_AUTHN_LOGIN: admin
+    container_name: conjur-cli
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    privileged: true
+    user: root
+    ports:
+      - 8081:8080
+      - 50000:50000
+    container_name: jenkins
+    volumes:
+      - /tmp/instruqt/env/conjur-jenkins/jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/local/bin/docker:/usr/local/bin/docker
+
+
+  http-auth-server:
+    image: http-auth-server:1.0
+    build:
+      context: /tmp/instruqt/env/conjur-jenkins/http-auth-server/
+    ports:
+     - 8082:80
+    container_name: http-auth-server
