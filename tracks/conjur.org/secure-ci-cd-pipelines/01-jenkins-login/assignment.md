@@ -25,12 +25,34 @@ tabs:
   type: service
   hostname: jenkins-demo
   path: /
-  port: 80
+  port: 8082
 difficulty: basic
 timelimit: 300
 ---
-Let's log in to Jenkins
+First, let's make sure that all the containers were started. Run the following command in the `Terminal` and make sure the following containers are returned:
+
+```
+docker ps
+```
+
+* conjur
+* conjur-cli
+* database
+* jenkins
+* http-auth-server
+
+If all containers are reported, we're ready to log in to Jenkins.
 
 1. Select the `Jenkins Console` tab.
 
-2. Login as `admin` with password `344827fbdbfb40d5aac067c7a07b9230`
+2. Login as the following username:
+
+```
+admin
+```
+
+3. Using the following password:
+
+```
+344827fbdbfb40d5aac067c7a07b9230
+```
