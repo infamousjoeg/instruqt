@@ -13,3 +13,11 @@ fi
 if [ ! -f /root/conjur/grant_conjur_id.yml ]; then
   fail-message "Your challenge failed because you did not create a grant_conjur_id.yml Ansible playbook file"
 fi
+
+if [ ! -f /etc/conjur.conf ]; then
+  fail-message "Your challenge failed because dynamic enrollment failed to create /etc/conjur.conf"
+fi
+
+if [ ! -f /etc/conjur.identity ]; then
+  fail-message "Your challenge failed because dynamic enrollment failed to create /etc/conjur.identity"
+fi

@@ -1,4 +1,8 @@
 #!/bin/bash
 
-cd conjur || exit 1
-docker-compose exec conjur conjurctl account create demo | tee admin.out
+while ! nc -z host01 8080; do
+    echo "Waiting for port 8080 to become reachable on host01"
+    sleep 1
+done
+
+docker-compose exec conjur conjurctl account create demo | tee conjur/admin.out
