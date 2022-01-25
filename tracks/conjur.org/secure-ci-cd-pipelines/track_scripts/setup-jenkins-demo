@@ -20,7 +20,7 @@ git init
 git remote add -f origin https://github.com/infamousjoeg/instruqt.git
 git config core.sparseCheckout true
 echo "env/conjur-jenkins" >> .git/info/sparse-checkout
-git pull origin master
+git pull origin main
 echo "=== [FINISH] git sparse checkout ==="
 
 # Conjur, Jenkins, and HTTP Web Server
