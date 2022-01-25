@@ -1,4 +1,5 @@
 slug: secure-ci-cd-pipelines
+id: m6kw2ytipj7m
 type: track
 title: Secure CI/CD Pipelines
 teaser: A short description of the track.
@@ -37,10 +38,18 @@ description: |-
 
 
   [www.conjur.org](https://www.conjur.org)
-icon: https://storage.googleapis.com/instruqt-frontend/img/tracks/default.png
-tags: []
+icon: https://raw.githubusercontent.com/infamousjoeg/instruqt/main/assets/logos/CyberArkCommons_Vert_4C%40256x.png
+tags:
+- cyberark
+- conjur
+- secrets-management
+- red-hat
+- ansible
+- ansible-community
+- open-source
 owner: cyberark
 developers:
 - joe@joe-garcia.com
 private: false
 published: false
+checksum: "14738550480419884420"
