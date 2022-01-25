@@ -12,13 +12,23 @@ apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get install git -y
 echo "=== [FINISH] apt update and installs ==="
 
+# Git sparse checkout
+echo "=== [START] git sparse checkout ==="
+mkdir -p /tmp/instruqt
+cd /tmp/instruqt || exit
+git init
+git remote add -f origin https://github.com/infamousjoeg/instruqt.git
+git config core.sparseCheckout true
+echo "env/conjur-jenkins" >> .git/info/sparse-checkout
+git pull origin master
+echo "=== [FINISH] git sparse checkout ==="
+
 # Conjur, Jenkins, and HTTP Web Server
 echo "=== [START] Conjur initial setup ==="
-git clone https://github.com/quincycheng/katacoda-env-conjur-jenkins
-cd katacoda-env-conjur-jenkins || exit
 docker-compose pull
 docker-compose run --no-deps --rm conjur data-key generate > data_key
 generated_data_key="$(<data_key)"
+export CONJUR_DATA_KEY="$generated_data_key"
 echo "export CONJUR_DATA_KEY=${generated_data_key}" >> /root/.bashrc
 docker pull postgres:9.6
 docker-compose up -d
