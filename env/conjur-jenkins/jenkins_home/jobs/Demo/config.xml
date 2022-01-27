@@ -1,19 +1,22 @@
 <?xml version='1.1' encoding='UTF-8'?>
-<com.cloudbees.hudson.plugins.folder.Folder plugin="cloudbees-folder@6.14">
+<com.cloudbees.hudson.plugins.folder.Folder plugin="cloudbees-folder@6.17">
   <actions/>
+  <description></description>
+  <displayName>Demo</displayName>
   <properties>
     <com.cloudbees.hudson.plugins.folder.properties.FolderCredentialsProvider_-FolderCredentialsProperty>
       <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash">
         <entry>
-          <com.cloudbees.plugins.credentials.domains.Domain plugin="credentials@2.3.13">
+          <com.cloudbees.plugins.credentials.domains.Domain plugin="credentials@1074.v60e6c29b_b_44b_">
             <specifications/>
           </com.cloudbees.plugins.credentials.domains.Domain>
           <java.util.concurrent.CopyOnWriteArrayList>
-            <com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl plugin="credentials@2.3.13">
+            <com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl plugin="credentials@1074.v60e6c29b_b_44b_">
               <id>theServerAccount</id>
               <description></description>
               <username>theServerAccount</username>
-              <password>{AQAAABAAAAAghdw+mjU/g4IVqL5k55JgkzxwnGioLZ9PTfkEHQ1/cgeEBobE9tkBf9+fOH1DB/C7}</password>
+              <password>{AQAAABAAAAAg8OFIPwReEk3JHumCSjjI4wiI0rhUz7nD9Rx8llGUv3qOiLGzADRCgivzUXFtm5iL}</password>
+              <usernameSecret>false</usernameSecret>
             </com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl>
           </java.util.concurrent.CopyOnWriteArrayList>
         </entry>
@@ -32,10 +35,6 @@
     </views>
     <tabBar class="hudson.views.DefaultViewsTabBar"/>
   </folderViews>
-  <healthMetrics>
-    <com.cloudbees.hudson.plugins.folder.health.WorstChildHealthMetric>
-      <nonRecursive>false</nonRecursive>
-    </com.cloudbees.hudson.plugins.folder.health.WorstChildHealthMetric>
-  </healthMetrics>
+  <healthMetrics/>
   <icon class="com.cloudbees.hudson.plugins.folder.icons.StockFolderIcon"/>
 </com.cloudbees.hudson.plugins.folder.Folder>

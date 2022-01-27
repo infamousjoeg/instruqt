@@ -1,10 +1,9 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <hudson>
   <disabledAdministrativeMonitors>
-    <string>hudson.diagnosis.ReverseProxySetupMonitor</string>
+    <string>jenkins.diagnostics.ControllerExecutorsNoAgents</string>
   </disabledAdministrativeMonitors>
-  <version>2.249.1</version>
-  <installStateName>RUNNING</installStateName>
+  <version>2.319.2</version>
   <numExecutors>2</numExecutors>
   <mode>NORMAL</mode>
   <useSecurity>true</useSecurity>
@@ -23,6 +22,7 @@
   <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
   <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
   <clouds/>
+  <quietPeriod>5</quietPeriod>
   <scmCheckoutRetryCount>0</scmCheckoutRetryCount>
   <views>
     <hudson.model.AllView>
@@ -41,4 +41,6 @@
   </crumbIssuer>
   <nodeProperties/>
   <globalNodeProperties/>
+  <noUsageStatistics>true</noUsageStatistics>
+  <nodeRenameMigrationNeeded>false</nodeRenameMigrationNeeded>
 </hudson>

@@ -43,13 +43,11 @@ tags:
 - cyberark
 - conjur
 - secrets-management
-- red-hat
-- ansible
-- ansible-community
 - open-source
+- jenkins
 owner: cyberark
 developers:
 - joe@joe-garcia.com
 private: false
 published: false
-checksum: "12139726176370288079"
+checksum: "9883348282410795180"

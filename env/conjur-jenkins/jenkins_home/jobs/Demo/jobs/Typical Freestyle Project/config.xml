@@ -12,11 +12,12 @@
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <jenkins.plugins.http__request.HttpRequest plugin="http_request@1.8.26">
+    <jenkins.plugins.http__request.HttpRequest plugin="http_request@1.13">
       <url>http://http-auth-server</url>
       <ignoreSslErrors>true</ignoreSslErrors>
       <httpMode>GET</httpMode>
       <httpProxy></httpProxy>
+      <proxyAuthentication></proxyAuthentication>
       <passBuildParameters>false</passBuildParameters>
       <validResponseCodes>100:399</validResponseCodes>
       <validResponseContent></validResponseContent>
@@ -32,6 +33,7 @@
       <multipartName></multipartName>
       <wrapAsMultipart>false</wrapAsMultipart>
       <useSystemProperties>false</useSystemProperties>
+      <useNtlm>false</useNtlm>
       <customHeaders class="empty-list"/>
     </jenkins.plugins.http__request.HttpRequest>
   </builders>

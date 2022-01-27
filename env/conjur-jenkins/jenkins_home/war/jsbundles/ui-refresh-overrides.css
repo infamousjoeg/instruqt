@@ -1,5 +1,5 @@
 :root {
-  --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-sans: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Noto Sans", oxygen, ubuntu, cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-size-base: 1rem;
   --font-size-sm: 0.875rem;
   --font-size-xs: 0.75rem;
@@ -18,10 +18,17 @@
   --danger: #cc0003;
   --warning: #ea6b19;
   --focus: #3fb3f7;
+  --focus-btn-primary: rgba(11, 106, 162, 0.5);
+  --focus-btn-secondary: rgba(11, 106, 162, 0.5);
+  --focus-btn-danger: rgba(204, 0, 3, 0.5);
+  --focus-input-border: #093853;
+  --focus-input-glow: rgba(11, 106, 162, 0.25);
   --primary-hover: #0587d4;
   --primary-active: #095683;
   --danger-hover: #eb383b;
   --danger-active: #b50003;
+  --weather-icon-color: var(--primary);
+  --unstable-build-icon-color: var(--notification-warning-icon-color);
   --background: var(--white);
   --line-green: #acb;
   --medium-translucent: rgba(255, 255, 255, 0.75);
@@ -48,8 +55,10 @@
   --breadcrumbs-border: var(--light-grey);
   --breadcrumbs-text-color: #4d545d;
   --breadcrumbs-item-bg-color--hover: var(--light-grey);
-  --monitor-bg-v2: #f8d7da;
-  --monitor-color-v2: #721c24;
+  --monitor-bg-v2: #fff3cd;
+  --monitor-color-v2: #856404;
+  --sec-monitor-bg-v2: #f8d7da;
+  --sec-monitor-color-v2: #721c24;
   --alert-default-icon-color: #2196f3;
   --alert-default-bg-color: #d1ecf1;
   --alert-default-border-color: #bee5eb;
@@ -80,14 +89,32 @@
   --alert-danger-border-color: #ebccd1;
   --text-color: var(--black);
   --text-color-secondary: var(--secondary);
+  --btn-font-weight: bold;
+  --btn-text-color: var(--white);
+  --btn-font-size: var(--font-size-xs);
+  --btn-line-height: 1rem;
+  --btn-large-font-size: var(--font-size-sm);
+  --btn-large-line-height: 1.25rem;
   --btn-primary-bg: var(--primary);
   --btn-primary-bg-hover: var(--primary-hover);
   --btn-primary-bg-active: var(--primary-active);
   --btn-secondary-color: var(--secondary);
   --btn-secondary-bg: var(--btn-text-color);
   --btn-secondary-border: var(--medium-grey);
-  --btn-text-color: var(--white);
+  --btn-secondary-color--hover: var(--primary);
+  --btn-secondary-bg--hover: var(--btn-secondary-bg);
+  --btn-secondary-border--hover: var(--primary);
+  --btn-secondary-color--focus: var(--primary);
+  --btn-secondary-bg--focus: var(--btn-secondary-bg);
+  --btn-secondary-border--focus: var(--primary);
+  --btn-secondary-color--active: var(--primary-active);
+  --btn-secondary-bg--active: var(--btn-secondary-bg);
+  --btn-secondary-border--active: var(--primary-active);
+  --btn-link-color: var(--primary);
+  --btn-link-font-weight: var(--link-font-weight);
+  --btn-link-color--hover: var(--primary-hover);
   --btn-link-bg--hover: var(--very-light-grey);
+  --btn-link-color--active: var(--primary-active);
   --btn-link-bg--active: var(--light-grey);
   --help-area-bg-color: var(--very-light-grey);
   --configure-job-help-area-bg-color: var(--medium-translucent);
@@ -109,6 +136,9 @@
   --link-text-decoration--hover: underline;
   --link-text-decoration--active: underline;
   --link-font-weight: 600;
+  --tooltip-background-color: var(--background);
+  --tooltip-foreground-color: var(--text-color);
+  --tooltip-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.05), 0 2px 2px rgba(0, 0, 0, 0.05), 0 10px 20px rgba(0, 0, 0, 0.2);
   --link-dark-color: var(--text-color);
   --link-dark-visited-color: var(--link-dark-color);
   --link-dark-color--hover: var(--primary-hover);
@@ -153,6 +183,7 @@
   --task-link-bg-color--hover: var(--very-light-grey);
   --input-color: var(--white);
   --input-border: #ccc;
+  --input-border-hover: #888;
   --input-hidden-password-bg-color: #f9f9f9;
   --menu-text-color: black;
   --menu-bg-color: var(--white);
@@ -176,6 +207,7 @@
   --plugin-manager-category-link-border-color--hover: var(--black);
   --plugin-manager-category-text-color: var(--text-color);
   --plugin-manager-category-link-color--hover: var(--text-color);
+  --plugin-manager-unavailable-bg-color: #f4f4f4;
   --auto-complete-bg-color--prehighlight: #b3d4ff;
   --call-to-action-link-color: #000;
   --call-to-action-text-color: var(--alert-info-text-color);
@@ -188,7 +220,6 @@
   display: none;
 }
 .ui-refresh a.page-header__brand-link {
-  display: inline-block;
   display: inline-flex;
   align-items: center;
   height: 100%;
@@ -256,15 +287,21 @@
   fill: #095683;
   fill: var(--header-link-bg-active-v2);
 }
-.ui-refresh #visible-am-container.visible #visible-am-button {
+.ui-refresh .am-container.visible .am-button {
   background-color: #095683;
   background-color: var(--header-link-bg-active-v2);
 }
-.ui-refresh #visible-am-button .am-monitor__count {
-  color: #721c24;
+.ui-refresh .am-button .am-monitor__count {
+  color: #856404;
   color: var(--monitor-color-v2);
-  background-color: #f8d7da;
+  background-color: #fff3cd;
   background-color: var(--monitor-bg-v2);
+}
+.ui-refresh .am-button.security-am .am-monitor__count {
+  color: #721c24;
+  color: var(--sec-monitor-color-v2);
+  background-color: #f8d7da;
+  background-color: var(--sec-monitor-bg-v2);
 }
 
 

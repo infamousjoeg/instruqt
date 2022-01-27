@@ -21,11 +21,6 @@ tabs:
   hostname: jenkins-demo
   path: /
   port: 8081
-- title: Target Website
-  type: service
-  hostname: jenkins-demo
-  path: /
-  port: 8082
 difficulty: basic
 timelimit: 300
 ---

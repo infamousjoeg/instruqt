@@ -1,23 +1,21 @@
 Manifest-Version: 1.0
-Archiver-Version: Plexus Archiver
-Created-By: Apache Maven
-Built-By: dnusbaum
-Build-Jdk: 1.8.0_161
-Extension-Name: workflow-api
-Specification-Title: The Jenkins Plugins Parent POM Project
+Hudson-Version: 2.249.1
+Plugin-Dependencies: workflow-step-api:2.24,scm-api:2.6.5
 Implementation-Title: workflow-api
-Implementation-Version: 2.40
-Group-Id: org.jenkins-ci.plugins.workflow
-Short-Name: workflow-api
 Long-Name: Pipeline: API
-Url: https://github.com/jenkinsci/workflow-api-plugin
+Implementation-Version: 1136.v7f5f1759dc16
+Group-Id: org.jenkins-ci.plugins.workflow
 Minimum-Java-Version: 1.8
-Plugin-Version: 2.40
-Hudson-Version: 2.150.3
-Jenkins-Version: 2.150.3
-Plugin-Dependencies: workflow-step-api:2.16,scm-api:2.2.6,structs:1.17
-Plugin-Developers: 
 Plugin-License-Name: MIT License
-Plugin-License-Url: https://opensource.org/licenses/MIT
+Specification-Title: The Jenkins Plugins Parent POM Project
 Plugin-ScmUrl: https://github.com/jenkinsci/workflow-api-plugin
+Plugin-Version: 1136.v7f5f1759dc16
+Jenkins-Version: 2.249.1
+Url: https://github.com/jenkinsci/workflow-api-plugin
+Short-Name: workflow-api
+Plugin-License-Url: https://opensource.org/licenses/MIT
+Plugin-Developers: 
+Extension-Name: workflow-api
+Build-Jdk-Spec: 1.8
+Created-By: Maven Archiver 3.5.1
 

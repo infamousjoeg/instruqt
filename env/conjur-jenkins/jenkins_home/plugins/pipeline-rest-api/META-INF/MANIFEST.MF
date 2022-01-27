@@ -1,27 +1,24 @@
 Manifest-Version: 1.0
-Archiver-Version: Plexus Archiver
-Created-By: Apache Maven
-Built-By: olamy
-Build-Jdk: 1.8.0_201
+Created-By: Maven Archiver 3.5.1
+Build-Jdk-Spec: 11
 Extension-Name: pipeline-rest-api
-Specification-Title: Provides a REST API to access pipeline and pipeli
- ne run data
 Implementation-Title: pipeline-rest-api
-Implementation-Version: 2.15
+Implementation-Version: 2.21
+Specification-Title: Provides a REST API to access pipeline and pipeline
+  run data
 Group-Id: org.jenkins-ci.plugins.pipeline-stage-view
 Short-Name: pipeline-rest-api
 Long-Name: Pipeline: REST API Plugin
 Url: https://github.com/jenkinsci/pipeline-stage-view-plugin
 Minimum-Java-Version: 1.8
-Plugin-Version: 2.15
-Hudson-Version: 2.60.3
-Jenkins-Version: 2.60.3
-Plugin-Dependencies: workflow-api:2.24,workflow-job:2.12,workflow-step
- -api:2.14,workflow-support:2.14,jackson2-api:2.9.9.1,pipeline-graph-a
- nalysis:1.4,pipeline-input-step:2.8,pipeline-stage-step:2.3
+Plugin-Version: 2.21
+Hudson-Version: 2.235.5
+Jenkins-Version: 2.235.5
+Plugin-Dependencies: workflow-api:2.46,workflow-job:2.41,workflow-step-a
+ pi:2.24,workflow-support:3.8,jackson2-api:2.12.4,pipeline-graph-analysi
+ s:1.4,pipeline-input-step:2.12,pipeline-stage-step:2.5
 Plugin-Developers: 
 Plugin-License-Name: MIT License
 Plugin-License-Url: https://opensource.org/licenses/MIT
 Plugin-ScmUrl: https://github.com/jenkinsci/pipeline-stage-view-plugin
- /pipeline-rest-api
 

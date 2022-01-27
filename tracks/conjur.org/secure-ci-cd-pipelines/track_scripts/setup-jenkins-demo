@@ -9,7 +9,7 @@ done
 # Update apt & Install git
 echo "=== [START] apt update and installs ==="
 apt-get update
-DEBIAN_FRONTEND=noninteractive apt-get install git -y
+DEBIAN_FRONTEND=noninteractive apt-get install git jq -y
 echo "=== [FINISH] apt update and installs ==="
 
 # Git sparse checkout

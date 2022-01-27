@@ -680,8 +680,8 @@ body .plugin-setup-wizard .plugin-selector .plugins .plugin-selected-info.plugin
   right: 10px;
   left: auto;
 }
-body .plugin-setup-wizard .plugin-selector .plugins .plugin-select-actions a + a:before,
-body .plugin-setup-wizard .plugin-selector .plugins .plugin-selected-info a + a:before {
+body .plugin-setup-wizard .plugin-selector .plugins .plugin-select-actions a + a::before,
+body .plugin-setup-wizard .plugin-selector .plugins .plugin-selected-info a + a::before {
   content: '|';
   font-size: 11px;
   text-decoration: none !important;
@@ -744,7 +744,7 @@ body .plugin-setup-wizard .plugin-selector .plugins .plugin-select-controls .for
   position: relative;
 }
 body .plugin-setup-wizard .plugin-selector .plugins .plugin-list-description {
-  margin: -10px -10px 0px -10px;
+  margin: -10px -10px 0 -10px;
   padding: 10px 20px;
   opacity: 0.7;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -816,7 +816,7 @@ body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin.selecte
   margin: 4px -7px;
   padding: 6px 1px 6px 26px;
   border-radius: 2px;
-  border: 1px solid #C2E0A9;
+  border: 1px solid #c2e0a9;
   color: #3c763d;
 }
 body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin.selected label .dependencies {
@@ -867,7 +867,7 @@ body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .websit
   width: 15px;
   margin-left: 2px;
 }
-body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .website-link:before {
+body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .website-link::before {
   display: inline-block;
   position: absolute;
   width: 11px;
@@ -878,7 +878,7 @@ body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .websit
   background: #555;
   border-radius: 4px;
 }
-body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .website-link:after {
+body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .website-link::after {
   content: '\f14c';
   display: inline-block;
   font: 15px FontAwesome;
@@ -891,12 +891,12 @@ body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .websit
   border-radius: 2px;
   color: #f8f8f8;
 }
-body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .website-link:hover:before,
-body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .website-link:focus:before {
+body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .website-link:hover::before,
+body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .website-link:focus::before {
   background: #fff;
 }
-body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .website-link:hover:after,
-body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .website-link:focus:after {
+body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .website-link:hover::after,
+body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .website-link:focus::after {
   color: #337ab7;
   width: 16px;
   height: 16px;
@@ -923,13 +923,13 @@ body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .toggle
   color: #555;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.25);
 }
-body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .toggle-dependency-list .badge:after {
+body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .toggle-dependency-list .badge::after {
   content: '\f0d9';
   font: 15px FontAwesome;
   display: inline-block;
   width: 13px;
   height: 13px;
-  margin: -4px -2px 0px 1px;
+  margin: -4px -2px 0 1px;
   vertical-align: middle;
 }
 body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .toggle-dependency-list:hover,
@@ -954,7 +954,7 @@ body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .dep-li
 }
 body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .dep-list > h3 {
   margin: 0 25px 4px 0;
-  color: #555555;
+  color: #555;
   font-size: 14px;
   border-bottom: 1px solid #fff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
@@ -967,7 +967,7 @@ body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .dep-li
   color: #555;
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.25);
 }
-body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .dep-list .badge:after {
+body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .dep-list .badge::after {
   content: '\f14c';
   font: 11px FontAwesome;
 }
@@ -978,7 +978,7 @@ body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin .dep-li
   background: #337ab7;
   text-decoration: none;
 }
-body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin.show-dependencies .toggle-dependency-list .badge:after {
+body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin.show-dependencies .toggle-dependency-list .badge::after {
   content: '\f0d7';
 }
 body .plugin-setup-wizard .plugin-selector .plugins .plugin-list .plugin.show-dependencies .dep-list {
@@ -1009,7 +1009,7 @@ body .plugin-setup-wizard .plugin-selector .categories li a {
   font-weight: 500;
   border-radius: none;
 }
-body .plugin-setup-wizard .plugin-selector .categories li a:after {
+body .plugin-setup-wizard .plugin-selector .categories li a::after {
   content: '';
   display: none;
   position: absolute;
@@ -1025,14 +1025,14 @@ body .plugin-setup-wizard .plugin-selector .categories li a:focus {
   box-shadow: inset -200px 0 200px -200px rgba(100, 200, 255, 0.33);
   color: #337ab7;
 }
-body .plugin-setup-wizard .plugin-selector .categories li a:hover:after,
-body .plugin-setup-wizard .plugin-selector .categories li a:focus:after {
+body .plugin-setup-wizard .plugin-selector .categories li a:hover::after,
+body .plugin-setup-wizard .plugin-selector .categories li a:focus::after {
   display: block;
 }
 body .plugin-setup-wizard .plugin-selector .categories li.active a {
   color: #337ab7;
 }
-body .plugin-setup-wizard .plugin-selector .categories li.active a:after {
+body .plugin-setup-wizard .plugin-selector .categories li.active a::after {
   display: block;
   width: 4px;
 }
@@ -1079,7 +1079,7 @@ body .plugin-setup-wizard .install-console .dependent {
   color: #777;
   padding-left: 10px;
 }
-body .plugin-setup-wizard .install-console .dependent:before {
+body .plugin-setup-wizard .install-console .dependent::before {
   content: ' ** ';
 }
 body .plugin-setup-wizard .install-console .dependency-legend {
@@ -1137,7 +1137,7 @@ body .plugin-setup-wizard .selected-plugin-progress .selected-plugin {
 body .plugin-setup-wizard .selected-plugin-progress .selected-plugin:nth-child(odd) {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), inset 0 0 0 999px rgba(0, 0, 0, 0.05);
 }
-body .plugin-setup-wizard .selected-plugin-progress .selected-plugin:before {
+body .plugin-setup-wizard .selected-plugin-progress .selected-plugin::before {
   font-family: FontAwesome;
   font-size: 17px;
   line-height: 17px;
@@ -1146,7 +1146,7 @@ body .plugin-setup-wizard .selected-plugin-progress .selected-plugin:before {
   position: absolute;
   left: 5px;
 }
-body .plugin-setup-wizard .selected-plugin-progress .selected-plugin.installing:before {
+body .plugin-setup-wizard .selected-plugin-progress .selected-plugin.installing::before {
   content: '\f021';
   color: rgba(0, 60, 100, 0.33);
   -webkit-animation-name: spin;
@@ -1157,10 +1157,6 @@ body .plugin-setup-wizard .selected-plugin-progress .selected-plugin.installing:
   -moz-animation-duration: 2s;
   -moz-animation-iteration-count: infinite;
   -moz-animation-timing-function: linear;
-  -ms-animation-name: spin;
-  -ms-animation-duration: 2s;
-  -ms-animation-iteration-count: infinite;
-  -ms-animation-timing-function: linear;
   animation-name: spin;
   animation-duration: 2s;
   animation-iteration-count: infinite;
@@ -1169,7 +1165,7 @@ body .plugin-setup-wizard .selected-plugin-progress .selected-plugin.installing:
 body .plugin-setup-wizard .selected-plugin-progress .selected-plugin.success {
   background: #e5f9e5;
 }
-body .plugin-setup-wizard .selected-plugin-progress .selected-plugin.success:before {
+body .plugin-setup-wizard .selected-plugin-progress .selected-plugin.success::before {
   content: '\f00c';
   color: #3c763d;
   -webkit-animation-name: none;
@@ -1178,7 +1174,7 @@ body .plugin-setup-wizard .selected-plugin-progress .selected-plugin.success:bef
 body .plugin-setup-wizard .selected-plugin-progress .selected-plugin.fail {
   background: #fdd;
 }
-body .plugin-setup-wizard .selected-plugin-progress .selected-plugin.fail:before {
+body .plugin-setup-wizard .selected-plugin-progress .selected-plugin.fail::before {
   content: '\f00d';
   color: #a94442;
   -webkit-animation-name: none;
@@ -1290,21 +1286,21 @@ body .plugin-setup-wizard .alert {
   font-size: initial;
 }
 .loader,
-.loader:before,
-.loader:after {
+.loader::before,
+.loader::after {
   background: #E6E6E6;
   -webkit-animation: fb-loader 1s infinite ease-in-out;
   animation: fb-loader 1s infinite ease-in-out;
   width: 7px;
   height: 8px;
 }
-.loader:before,
-.loader:after {
+.loader::before,
+.loader::after {
   position: absolute;
   top: 0;
   content: '';
 }
-.loader:before {
+.loader::before {
   left: -10px;
   -webkit-animation-delay: -0.32s;
   animation-delay: -0.32s;
@@ -1319,7 +1315,7 @@ body .plugin-setup-wizard .alert {
   -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s;
 }
-.loader:after {
+.loader::after {
   left: 10px;
 }
 @-webkit-keyframes fb-loader {

@@ -1,29 +1,25 @@
 Manifest-Version: 1.0
-Archiver-Version: Plexus Archiver
-Created-By: Apache Maven
-Built-By: janario
-Build-Jdk: 1.8.0_242
-Extension-Name: http_request
+Hudson-Version: 2.249.1
+Plugin-Dependencies: workflow-basic-steps:2.22,workflow-durable-task-s
+ tep:2.40,workflow-step-api:2.24;resolution:=optional,apache-httpcompo
+ nents-client-4-api:4.5.13-1.0,credentials:2.6.1,script-security:1.78
+Implementation-Title: http_request
+Long-Name: HTTP Request Plugin
+Implementation-Version: 1.13
+Group-Id: org.jenkins-ci.plugins
+Minimum-Java-Version: 1.8
+Plugin-License-Name: MIT License
 Specification-Title: This plugin sends a http request to an url with s
  ome parameters.
- 		See the release notes for changes and compatibility https://github.
- com/jenkinsci/http-request-plugin/releases
-Implementation-Title: http_request
-Implementation-Version: 1.8.26
-Group-Id: org.jenkins-ci.plugins
-Short-Name: http_request
-Long-Name: HTTP Request Plugin
-Url: https://wiki.jenkins.io/display/JENKINS/HTTP+Request+Plugin
-Compatible-Since-Version: 1.8.17
-Minimum-Java-Version: 1.8
-Plugin-Version: 1.8.26
-Hudson-Version: 2.60.3
-Jenkins-Version: 2.60.3
-Plugin-Dependencies: workflow-step-api:1.10;resolution:=optional,apach
- e-httpcomponents-client-4-api:4.5.3-2.0,credentials:2.1.1,script-secu
- rity:1.17
-Plugin-Developers: Janario Oliveira:janario:janario.oliveira@gmail.com
-Plugin-License-Name: The MIT license
-Plugin-License-Url: https://opensource.org/licenses/MIT
 Plugin-ScmUrl: https://github.com/jenkinsci/http-request-plugin
+Plugin-Version: 1.13
+Jenkins-Version: 2.249.1
+Url: https://github.com/jenkinsci/http-request-plugin
+Short-Name: http_request
+Plugin-License-Url: https://opensource.org/licenses/MIT
+Compatible-Since-Version: 1.8.17
+Plugin-Developers: Janario Oliveira:janario:janario.oliveira@gmail.com
+Extension-Name: http_request
+Build-Jdk-Spec: 1.8
+Created-By: Maven Archiver 3.5.1
 

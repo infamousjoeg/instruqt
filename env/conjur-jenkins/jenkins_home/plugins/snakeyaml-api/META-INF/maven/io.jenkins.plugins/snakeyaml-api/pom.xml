@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>4.6</version>
+    <version>4.19</version>
     <relativePath />
   </parent>
   
@@ -18,7 +18,7 @@
   <artifactId>snakeyaml-api</artifactId>
   <groupId>io.jenkins.plugins</groupId>
   <description>This plugin packages stock Snakeyaml library</description>
-  <version>1.27.0</version>
+  <version>1.29.1</version>
   <packaging>hpi</packaging>
   <name>Snakeyaml API Plugin</name>
   <url>https://github.com/jenkinsci/snakeyaml-api-plugin</url>
@@ -27,7 +27,7 @@
     <checkstyle.skip>true</checkstyle.skip>
     <spotbugs.skip>true</spotbugs.skip>
     <maven.javadoc.skip>true</maven.javadoc.skip>
-    <snakeyaml.version>1.27</snakeyaml.version>
+    <snakeyaml.version>1.29</snakeyaml.version>
     <java.level>8</java.level>
     <jenkins.version>2.204.6</jenkins.version>
   </properties>
@@ -59,6 +59,6 @@
   <scm>
     <connection>scm:git:git://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
     <developerConnection>scm:git:git@github.com:jenkinsci/${project.artifactId}-plugin.git</developerConnection>
-    <tag>snakeyaml-api-1.27.0</tag>
+    <tag>snakeyaml-api-1.29.1</tag>
   </scm>
 </project>
