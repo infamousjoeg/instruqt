@@ -1,0 +1,3 @@
+#!/bin/bash
+
+mkdir -p /root/insecure-playbook && cd "$_" || exit 1

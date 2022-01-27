@@ -36,5 +36,6 @@ owner: cyberark
 developers:
 - joe@joe-garcia.com
 private: false
-published: false
-checksum: "3566030690961881268"
+published: true
+maintenance: true
+checksum: "4280162680295671137"

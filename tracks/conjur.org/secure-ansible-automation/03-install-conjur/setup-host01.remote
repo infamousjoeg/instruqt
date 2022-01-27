@@ -2,4 +2,4 @@
 
 docker-compose up -d
 mkdir -p /root/conjur && cd "$_" || exit 1
-docker-compose exec -T client mkdir -p /tmp
+docker-compose exec client mkdir -p /tmp

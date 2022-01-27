@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cd /root/conjur || exit 1
