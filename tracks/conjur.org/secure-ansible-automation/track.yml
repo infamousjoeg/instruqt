@@ -37,4 +37,5 @@ developers:
 - joe@joe-garcia.com
 private: false
 published: false
-checksum: "3566030690961881268"
+maintenance: true
+checksum: "459018755788113540"
