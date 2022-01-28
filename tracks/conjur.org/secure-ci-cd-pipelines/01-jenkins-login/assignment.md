@@ -51,3 +51,7 @@ admin
 ```
 344827fbdbfb40d5aac067c7a07b9230
 ```
+
+4. **CHECK THE BOX TO "Keep me signed in"***
+
+5. Click `Sign In`.

@@ -75,7 +75,7 @@ quick-start
 - Appliance URL:
 
 ```
-http://conjur:8080
+http://conjur
 ```
 
 - Conjur Authn Credential:

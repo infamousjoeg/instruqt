@@ -13,6 +13,9 @@ tabs:
   hostname: jenkins-demo
   path: /
   port: 8081
+- title: Terminal
+  type: terminal
+  hostname: jenkins-demo
 difficulty: basic
 timelimit: 300
 ---
@@ -50,7 +53,10 @@ Let's test the setup by copying & updating the project
 
 2. Click `Add build step > Execute shell`
 
-   Command to add:  `curl -Is -u theServerAccount:$CONJUR_SECRET http://http-auth-server:8082`
+   Command to add:
+   ```
+   curl -Is -u theServerAccount:$WEB_PASSWORD http://http-auth-server
+   ```
 
 3. Click Save
 
