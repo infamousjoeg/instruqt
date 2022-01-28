@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euxo pipefail
 
 # check
 echo "Checking the solution of the challenge"

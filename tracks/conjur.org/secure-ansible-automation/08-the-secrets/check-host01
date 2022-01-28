@@ -1,0 +1,28 @@
+#!/bin/bash
+set -euxo pipefail
+
+# check
+echo "Checking the solution of the challenge"
+if [ ! "$(docker-compose exec client conjur variable value server/host1/host)" ]; then
+  fail-message "Your challenge failed because you did not initialize the variable 'server/host1/host' with the value 'host01'"
+fi
+
+if [ ! "$(docker-compose exec client conjur variable value server/host1/user)" ]; then
+  fail-message "Your challenge failed because you did not initialize the variable 'server/host1/user' with the value 'service01'"
+fi
+
+if [ ! "$(docker-compose exec client conjur variable value server/host1/pass)" ]; then
+  fail-message "Your challenge failed because you did not initialize the variable 'server/host1/pass' with the value 'W/4m=cS6QSZSc*nd'"
+fi
+
+if [ ! "$(docker-compose exec client conjur variable value server/host2/host)" ]; then
+  fail-message "Your challenge failed because you did not initialize the variable 'server/host2/host' with the value 'host02'"
+fi
+
+if [ ! "$(docker-compose exec client conjur variable value server/host2/user)" ]; then
+  fail-message "Your challenge failed because you did not initialize the variable 'server/host2/user' with the value 'service02'"
+fi
+
+if [ ! "$(docker-compose exec client conjur variable value server/host2/pass)" ]; then
+  fail-message "Your challenge failed because you did not initialize the variable 'server/host2/pass' with the value '5;LF+J4Rfqds:DZ8'"
+fi

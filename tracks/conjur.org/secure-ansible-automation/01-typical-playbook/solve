@@ -1,3 +1,0 @@
-#!/bin/bash
-
-ansible-playbook -i insecure-playbook/inventory insecure-playbook/insecure-playbook.yml

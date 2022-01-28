@@ -1,0 +1,23 @@
+#!/bin/bash
+
+cat <<EOF > /root/insecure-playbook/inventory
+[demo_servers]
+host01 ansible_connection=ssh ansible_ssh_user=service01 ansible_ssh_pass=W/4m=cS6QSZSc*nd
+host02 ansible_connection=ssh ansible_ssh_user=service02 ansible_ssh_pass=5;LF+J4Rfqds:DZ8
+EOF
+
+cat <<EOF > /root/insecure-playbook/insecure-playbook.yml
+- hosts: demo_servers
+  tasks:
+    - name: Get user name
+      shell: whoami
+      register: theuser
+
+    - name: Get host name
+      shell: hostname
+      register: thehost
+
+    - debug: msg="I am {{ theuser.stdout }} at {{ thehost.stdout }}"
+EOF
+
+ansible-playbook -i insecure-playbook/inventory insecure-playbook/insecure-playbook.yml

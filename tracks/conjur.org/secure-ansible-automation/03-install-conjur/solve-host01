@@ -5,4 +5,4 @@ while ! nc -z host01 8080; do
     sleep 1
 done
 
-docker-compose exec conjur conjurctl account create demo | tee conjur/admin.out
+docker-compose exec -T conjur conjurctl account create demo > conjur/admin.out

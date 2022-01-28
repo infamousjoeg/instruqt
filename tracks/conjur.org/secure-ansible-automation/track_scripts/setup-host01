@@ -9,7 +9,7 @@ done
 # Ansible
 echo "=== [START] apt update and installs ==="
 apt-get update
-DEBIAN_FRONTEND=noninteractive apt-get install sshpass ansible git curl -y
+DEBIAN_FRONTEND=noninteractive apt-get install sshpass ansible git curl netcat -y
 echo "=== [FINISH] apt update and installs ==="
 
 echo "=== [START] Export env vars to /root/.bashrc ==="
