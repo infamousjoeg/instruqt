@@ -1,0 +1,5 @@
+- !policy
+  id: app/layers/testapp
+  owner: !group kube_admin
+  body:
+    - !layer

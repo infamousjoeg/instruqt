@@ -1,0 +1,46 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: testapp-insecure
+  namespace: testapp
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app: testapp-insecure
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: testapp-insecure
+  name: testapp-insecure
+  namespace: testapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testapp-insecure
+  template:
+    metadata:
+      labels:
+        app: testapp-insecure
+    spec:
+      containers:
+      - image: cyberark/demo-app
+        imagePullPolicy: IfNotPresent
+        name: testapp-insecure
+        ports:
+        - containerPort: 8080
+        env:
+          - name: DB_URL
+            value: postgresql://testapp-db.testapp.svc.cluster.local:5432/postgres
+          - name: DB_USERNAME
+            value: test_app
+          - name: DB_PASSWORD
+            value: 5b3e5f75cb3cdc725fe40318
+          - name: DB_PLATFORM
+            value: postgres
