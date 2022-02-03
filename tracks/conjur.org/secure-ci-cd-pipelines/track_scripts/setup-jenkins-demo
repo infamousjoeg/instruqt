@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -l
 
 # Wait for bootstrap to complete
 until [ -f /opt/instruqt/bootstrap/host-bootstrap-completed ]; do
