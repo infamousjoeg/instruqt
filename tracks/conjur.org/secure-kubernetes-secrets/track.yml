@@ -1,4 +1,5 @@
 slug: secure-kubernetes-secrets
+id: t4nqfojodazp
 type: track
 title: Secure Kubernetes Secrets
 teaser: A short description of the track.
@@ -6,10 +7,17 @@ description: |-
   A long description of the track.
 
   You can use any GitHub flavoured markdown.
-icon: https://storage.googleapis.com/instruqt-frontend/img/tracks/default.png
-tags: []
+icon: https://raw.githubusercontent.com/infamousjoeg/instruqt/main/assets/logos/CyberArkCommons_Vert_4C%40256x.png
+tags:
+- cyberark
+- conjur
+- secrets-management
+- open-source
+- kubernetes
 owner: cyberark
 developers:
 - joe@joe-garcia.com
 private: false
 published: false
+maintenance: true
+checksum: "6089820001680125302"

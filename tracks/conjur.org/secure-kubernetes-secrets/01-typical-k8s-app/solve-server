@@ -1,0 +1,11 @@
+#!/bin/bash
+set -eoxu pipefail
+
+kubectl apply -f /tmp/instruqt/env/conjur-k8s/db/db.yml
+kubectl apply -f /tmp/instruqt/env/conjur-k8s/insecure/app.yml
+kubectl wait --for=condition=Ready pod -l app=testapp-db --timeout=120s -n testapp
+kubectl wait --for=condition=Ready pod -l app=testapp-insecure --timeout=120s -n testapp
+
+cat <<EOF >> /root/.bash_history
+kubectl get pods -n testapp -w
+EOF

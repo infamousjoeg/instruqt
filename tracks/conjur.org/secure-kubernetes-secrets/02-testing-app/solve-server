@@ -1,0 +1,11 @@
+#!/bin/bash
+set -eoux pipefail
+
+response=$(kubectl describe  service testapp-insecure --namespace=testapp |grep Endpoints | awk '{print $2}'  )
+export URL=$response
+
+curl "$URL"/pets
+
+curl -d "{\"name\": \"$(shuf -n 1 /usr/share/dict/american-english)\"}" -H "Content-Type: application/json" "$URL"/pet
+
+curl -s "$URL"/pets | jq .

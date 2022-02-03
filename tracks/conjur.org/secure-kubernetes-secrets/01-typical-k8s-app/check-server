@@ -1,0 +1,8 @@
+#!/bin/bash
+set -euxo pipefail
+
+grep -q "kubectl apply -f /tmp/instruqt/env/conjur-k8s/db/db.yml" /root/.bash_history || fail-message "Don't forget to deploy the database for the application."
+
+grep -q "kubectl apply -f /tmp/instruqt/env/conjur-k8s/insecure/app.yml" /root/.bash_history || fail-message "Don't forget to deploy the application for the demonstration."
+
+grep -q "kubectl get pods -n testapp -w" /root/.bash_history || fail-message "You did not wait for the database & application to be ready."

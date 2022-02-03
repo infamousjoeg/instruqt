@@ -1,0 +1,41 @@
+#!/bin/bash -l
+
+# Wait for the Instruqt host bootstrap to finish
+echo "=== [START] Waiting for the host bootstrap"
+until [ -f /opt/instruqt/bootstrap/host-bootstrap-completed ]
+do
+    sleep 1
+done
+echo "=== [FINISH] Waiting for the host bootstrap"
+
+# Wait for the Kubernetes API server to become available
+echo "=== [START] Waiting for the Kubernetes API"
+while ! curl --silent --fail --output /dev/null http://localhost:8001/api 
+do
+    sleep 1 
+done
+echo "=== [FINISH] Waiting for the Kubernetes API"
+
+# Enable bash completion for kubectl
+echo "=== [START] Enabling bash completion for kubectl"
+echo "source /usr/share/bash-completion/bash_completion" >> /root/.bashrc
+echo "complete -F __start_kubectl k" >> /root/.bashrc
+echo "=== [FINISH] Enabling bash completion for kubectl"
+
+# Update apt & Install git
+echo "=== [START] apt update and installs ==="
+apt-get update 2&>/dev/null
+DEBIAN_FRONTEND=noninteractive apt-get install git jq -y 2&>/dev/null
+echo "=== [FINISH] apt update and installs ==="
+
+# Git sparse checkout
+echo "=== [START] git sparse checkout ==="
+mkdir -p /tmp/instruqt
+pushd /tmp/instruqt || exit
+    git init
+    git remote add -f origin https://github.com/infamousjoeg/instruqt.git
+    git config core.sparseCheckout true
+    echo "env/conjur-k8s" >> .git/info/sparse-checkout
+    git pull origin main
+popd || exit
+echo "=== [FINISH] git sparse checkout ==="

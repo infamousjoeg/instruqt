@@ -1,0 +1,12 @@
+#!/bin/bash
+set -eoxu pipefail
+
+if [[ -z "${URL}" ]]; then
+  fail-message "URL is not set"
+fi
+
+grep -q "curl \"URL\"/pets" /root/.bash_history || fail-message "The command curl ${URL}/pets was not executed."
+
+grep -q "curl  -d \"{\"name\": \"$(shuf -n 1 /usr/share/dict/american-english)\"}\" -H \"Content-Type: application/json\" \"$URL\"/pet" || fail-message "The command to add a new message with a random name was not executed."
+
+grep -q "curl -s \"$URL\"/pets | jq ." || fail-message "The command to list all messages was not executed."

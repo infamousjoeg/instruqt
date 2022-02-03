@@ -1,6 +1,12 @@
 version: "3"
-containers:
-- name: shell
-  image: ubuntu
+virtualmachines:
+- name: server
+  image: instruqt/k3s-v1-21-4
   shell: /bin/bash
-  memory: 256
+  machine_type: n1-standard-1
+- name: worker
+  image: instruqt/k3s-v1-21-4
+  shell: /bin/bash
+  environment:
+    K3S_CONTROL_PLANE_HOSTNAME: server
+  machine_type: n1-standard-1
