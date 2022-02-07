@@ -47,5 +47,10 @@ spec:
             value: test_app
           - name: POSTGRES_USER
             value: test_app
+        resources:
+          requests:
+            memory: "2048Mi"
+          limits:
+            memory: "2048Mi"
 
 
