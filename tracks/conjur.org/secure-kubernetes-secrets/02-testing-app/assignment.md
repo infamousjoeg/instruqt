@@ -16,10 +16,15 @@ timelimit: 300
 ---
 ## Get the URL
 
-To check whether the app is started & get the endpoint of the service, execute:
+First, let's get the endpoint of the app we just deployed:
 
 ```
-export URL=$(kubectl describe  service testapp-insecure --namespace=testapp |grep Endpoints | awk '{print $2}'  ) && \
+export URL=$(kubectl describe  service testapp-insecure --namespace=testapp |grep Endpoints | awk '{print $2}'  )
+```
+
+Next, let's make sure the service is up and running:
+
+```
 curl "$URL"/pets
 ```
 
