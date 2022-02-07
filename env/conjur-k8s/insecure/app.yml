@@ -51,13 +51,6 @@ spec:
           initialDelaySeconds: 10
           periodSeconds: 5
           timeoutSeconds: 2
-        livelinessProbe:
-          tcpSocket:
-            host: testapp-db
-            port: 5432
-          initialDelaySeconds: 10
-          periodSeconds: 5
-          timeoutSeconds: 2
         resources:
           requests:
             memory: "2048Mi"
