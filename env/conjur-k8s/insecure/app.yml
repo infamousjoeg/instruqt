@@ -44,13 +44,6 @@ spec:
             value: 5b3e5f75cb3cdc725fe40318
           - name: DB_PLATFORM
             value: postgres
-        readinessProbe:
-          tcpSocket:
-            host: testapp-db
-            port: 5432
-          initialDelaySeconds: 10
-          periodSeconds: 5
-          timeoutSeconds: 2
         resources:
           requests:
             memory: "2048Mi"
