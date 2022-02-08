@@ -12,7 +12,7 @@ tabs:
   type: terminal
   hostname: server
 difficulty: basic
-timelimit: 300
+timelimit: 800
 ---
 ## Get the URL
 
