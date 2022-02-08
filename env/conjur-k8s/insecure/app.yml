@@ -1,3 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: testapp
 ---
 apiVersion: v1
 kind: Service
@@ -30,20 +34,37 @@ spec:
         app: testapp-insecure
     spec:
       containers:
-      - image: captainfluffytoes/go_app
+      - image: cyberark/demo-app
         imagePullPolicy: IfNotPresent
         name: testapp-insecure
         ports:
         - containerPort: 8080
         env:
           - name: DB_URL
-            value: postgresql://testapp-db.testapp.svc.cluster.local:5432/postgres
+            value: postgresql://testapp-db:5432/test_app
           - name: DB_USERNAME
             value: test_app
           - name: DB_PASSWORD
             value: 5b3e5f75cb3cdc725fe40318
           - name: DB_PLATFORM
             value: postgres
+        resources:
+          requests:
+            memory: "2048Mi"
+          limits:
+            memory: "2048Mi"
+      - name: testapp-db
+        image: postgres:9.6
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 5432
+        env:
+          - name: POSTGRES_PASSWORD
+            value: 5b3e5f75cb3cdc725fe40318
+          - name: POSTGRES_DB
+            value: test_app
+          - name: POSTGRES_USER
+            value: test_app
         resources:
           requests:
             memory: "2048Mi"
