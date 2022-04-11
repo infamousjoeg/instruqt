@@ -3,6 +3,6 @@ set -euxo pipefail
 
 # check
 echo "Checking the solution of the challenge"
-if [ ! -f /root/conjur/ansible.out ]; then
+if [ ! -f /root/ansible.out ]; then
   fail-message "Your challenge failed because you did not create an Ansible host identity"
 fi

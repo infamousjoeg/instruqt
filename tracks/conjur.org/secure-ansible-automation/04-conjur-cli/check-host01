@@ -4,6 +4,6 @@ set -euxo pipefail
 # check
 echo "Checking the solution of the challenge"
 whoami=$(docker-compose exec -T client conjur authn whoami)
-if [ "$whoami" != "admin" ]; then
+if [ "$whoami" != "{\"account\":\"demo\",\"username\":\"admin\"}" ]; then
   fail-message "Your challenge failed because you did not properly authenticate as admin to the Conjur service."
 fi
