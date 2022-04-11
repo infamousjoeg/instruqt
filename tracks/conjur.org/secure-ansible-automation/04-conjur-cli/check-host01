@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euxo pipefail
 
+export COMPOSE_INTERACTIVE_NO_CLI=1
+
 # check
 echo "Checking the solution of the challenge"
 whoami=$(docker-compose exec -T client conjur authn whoami)

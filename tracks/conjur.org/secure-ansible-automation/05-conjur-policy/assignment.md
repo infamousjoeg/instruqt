@@ -39,12 +39,12 @@ Copy the following and paste it on the "Code Editor" tab in a new policy file na
 
 ```
 - &variables
-  - !variable host1/host
-  - !variable host1/user
-  - !variable host1/pass
-  - !variable host2/host
-  - !variable host2/user
-  - !variable host2/pass
+  - !variable host01/host
+  - !variable host01/user
+  - !variable host01/pass
+  - !variable host02/host
+  - !variable host02/user
+  - !variable host02/pass
 
 - !group secrets-users
 

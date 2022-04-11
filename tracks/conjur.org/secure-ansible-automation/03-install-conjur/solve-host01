@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export COMPOSE_INTERACTIVE_NO_CLI=1
+
 while ! nc -z host01 8080; do
     echo "Waiting for port 8080 to become reachable on host01"
     sleep 1

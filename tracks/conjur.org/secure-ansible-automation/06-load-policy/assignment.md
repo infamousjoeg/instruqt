@@ -28,7 +28,7 @@ docker-compose exec client conjur policy load --replace root /tmp/conjur.yml
 
 ```
 docker cp conjur/ansible.yml root_client_1:/tmp/
-docker-compose exec client conjur policy load ansible /tmp/ansible.yml  | tee ansible.out
+docker-compose exec client conjur policy load ansible /tmp/ansible.yml  | tee conjur/ansible.out
 ```
 
 **Load Server Policy**

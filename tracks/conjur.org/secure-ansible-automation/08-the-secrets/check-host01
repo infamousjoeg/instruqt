@@ -1,28 +1,30 @@
 #!/bin/bash
 set -euxo pipefail
-
+ 
+export COMPOSE_INTERACTIVE_NO_CLI=1
+ 
 # check
 echo "Checking the solution of the challenge"
-if [ "$(docker-compose exec client conjur variable value server/host1/host)" != "host01" ]; then
+if [ "$(docker-compose exec -T client conjur variable value server/host01/host)" != "host01" ]; then
   fail-message "Your challenge failed because you did not initialize the variable 'server/host1/host' with the value 'host01'"
 fi
-
-if [ "$(docker-compose exec client conjur variable value server/host1/user)" != "service01" ]; then
+ 
+if [ "$(docker-compose exec -T client conjur variable value server/host01/user)" != "service01" ]; then
   fail-message "Your challenge failed because you did not initialize the variable 'server/host1/user' with the value 'service01'"
 fi
-
-if [ "$(docker-compose exec client conjur variable value server/host1/pass)" != "W/4m=cS6QSZSc*nd" ]; then
+ 
+if [ "$(docker-compose exec -T client conjur variable value server/host01/pass)" != "W/4m=cS6QSZSc*nd" ]; then
   fail-message "Your challenge failed because you did not initialize the variable 'server/host1/pass' with the value 'W/4m=cS6QSZSc*nd'"
 fi
-
-if [ "$(docker-compose exec client conjur variable value server/host2/host)" != "host02" ]; then
+ 
+if [ "$(docker-compose exec -T client conjur variable value server/host02/host)" != "host02" ]; then
   fail-message "Your challenge failed because you did not initialize the variable 'server/host2/host' with the value 'host02'"
 fi
-
-if [ "$(docker-compose exec client conjur variable value server/host2/user)" != "service02" ]; then
+ 
+if [ "$(docker-compose exec -T client conjur variable value server/host02/user)" != "service02" ]; then
   fail-message "Your challenge failed because you did not initialize the variable 'server/host2/user' with the value 'service02'"
 fi
-
-if [ "$(docker-compose exec client conjur variable value server/host2/pass)" != "5;LF+J4Rfqds:DZ8" ]; then
+ 
+if [ "$(docker-compose exec -T client conjur variable value server/host02/pass)" != "5;LF+J4Rfqds:DZ8" ]; then
   fail-message "Your challenge failed because you did not initialize the variable 'server/host2/pass' with the value '5;LF+J4Rfqds:DZ8'"
 fi

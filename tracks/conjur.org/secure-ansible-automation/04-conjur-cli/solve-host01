@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export COMPOSE_INTERACTIVE_NO_CLI=1
+
 docker-compose exec -T client bash -c "echo yes | conjur init -u http://host01:8080 -a demo"
 api_key="$(grep API conjur/admin.out | cut -d: -f2 | tr -d ' \r\n')"
 docker-compose exec -T client conjur authn login -u admin -p "$api_key"

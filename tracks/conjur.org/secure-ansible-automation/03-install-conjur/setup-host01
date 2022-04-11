@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export COMPOSE_INTERACTIVE_NO_CLI=1
+
 docker-compose up -d
 mkdir -p /root/conjur && cd "$_" || exit 1
 

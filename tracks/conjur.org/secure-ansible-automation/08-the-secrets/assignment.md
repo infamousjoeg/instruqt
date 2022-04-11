@@ -23,30 +23,30 @@ Let's centralize the secrets & server info and add them to Conjur.
 
 Host 1 IP:
 ```
-docker-compose exec client conjur variable values add server/host1/host "host01"
+docker-compose exec client conjur variable values add server/host01/host "host01"
 ```
 Host 1 username:
 
 ```
-docker-compose exec client conjur variable values add server/host1/user "service01"
+docker-compose exec client conjur variable values add server/host01/user "service01"
 ```
 Host 1 password:
 
 ```
-docker-compose exec client conjur variable values add server/host1/pass "W/4m=cS6QSZSc*nd"
+docker-compose exec client conjur variable values add server/host01/pass "W/4m=cS6QSZSc*nd"
 ```
 
 **host02**
 
 Host 2 IP:
 ```
-docker-compose exec client conjur variable values add server/host2/host "host02"
+docker-compose exec client conjur variable values add server/host02/host "host02"
 ```
 Host 2 username:
 ```
-docker-compose exec client conjur variable values add server/host2/user "service02"
+docker-compose exec client conjur variable values add server/host02/user "service02"
 ```
 Host 2 password:
 ```
-docker-compose exec client conjur variable values add server/host2/pass "5;LF+J4Rfqds:DZ8"
+docker-compose exec client conjur variable values add server/host02/pass "5;LF+J4Rfqds:DZ8"
 ```
