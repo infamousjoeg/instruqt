@@ -4,8 +4,8 @@ sed -i "s=login host/=login host%2F=" /etc/conjur.identity
 
 cat >> /root/secure-playbook/inventory <<EOF
 [demo_servers]
-host01
-host02
+host1
+host2
 EOF
 
 cat >> /root/secure-playbook/playbook.yml <<EOF

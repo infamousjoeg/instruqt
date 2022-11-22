@@ -32,8 +32,8 @@ Next, let's create an inventory file that defines our hosts that Ansible should 
 
 ```
 [demo_servers]
-host01
-host02
+host1
+host2
 ```
 
 We also need to create the secure playbook that we'll be executing on the hosts contained in our inventory file. Paste the following on the "Code Editor" tab in a new file named `playbook.yml`:
